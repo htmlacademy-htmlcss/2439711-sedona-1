@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Николай Логинов](https://up.htmlacademy.ru/htmlcss-individual/1/user/2439711).
-* Наставник: `Сергей Teacher Остаповец`.
+* Наставник: [Сергей Teacher Остаповец](https://htmlacademy.ru/profile/id288419).
 
 ---
 

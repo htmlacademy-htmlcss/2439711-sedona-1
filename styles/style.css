@@ -32,6 +32,22 @@
 /* Footer */
 
 
+/* Hotel filter*/
+
+.hotel-filter-backdrop {
+  background-image: ("images/decor/sub-backdrop.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 412px;
+
+}
+
+/* Subscription */
+
+.subscription {
+  background-image: ("images/decor/sub-backdrop.jpg");
+}
+
 /* Catalog */
-
-

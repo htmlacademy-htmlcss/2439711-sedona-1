@@ -37,18 +37,18 @@
         </li>
       </ul>
     </nav>
-    <a class="navigation-link" href="#">Хочу сюда</a>
+    <a class="navigation-link-want" href="#">ХОЧУ СЮДА</a>
   </header>
 
   <main class="main">
     <section class="hero">
       <h1 class="visually-hidden">Отдохните в Седоне!</h1>
-      <img class="hero-backdrop" src="images/hero/hero-backdrop.jpg" alt="Горы предСедонья">
-      <img class="hero-backdrop-bottom" src="images/hero/hero-backdrop-bottom.png" alt="Горы предСедонья">
+      <div class="hero-wrapper">
+        <img class="hero-backdrop" src="images/hero/hero-backdrop.jpg" alt="Горы предСедонья">
+        <img class="hero-title" src="images/hero/welcome.svg" alt="Добро пожаловать в Седону!">
+        <img class="hero-backdrop-bottom" src="images/hero/hero-backdrop-bottom.png" alt="Декоративый узор">
+      </div>
       <div class="hero-titles">
-        <img src="images/hero/hero-text-1.svg" alt="Добро пожаловать!">
-        <img src="images/hero/hero-text-2.svg" alt="Седона">
-        <img src="images/hero/hero-text-3.svg" alt="Седона лучше Гранд каньона">
       </div>
       <p class="hero-header">
         <h2>СЕДОНА - НЕБОЛЬШОЙ ГОРОДОК В АРИЗОНЕ, ЗАСЛУЖИВАЮЩИЙ БОЛЬШЕГО!</h2>
@@ -60,7 +60,7 @@
 
     <section class="features">
       <h2 class="visually-hidden">Преимущества курорта Седона</h2>
-      <div class="features-row-wrapper">
+      <div class="features-row-wrapper-top">
         <div class="features-row-text">
           <p class="features-row-title">НАСТОЯЩИЙ ГОРОДОК</p>
           <p class="features-row-description">Седона - не аттракцион для туристов, там течет своя жизнь</p>
@@ -70,20 +70,20 @@
         </div>
       </div>
       <div class="features-row-wrapper">
-        <div class="features-row-block block-1">
-          <p class="features-row-title">НЕБОЛЬШАЯ ПЛОЩАДЬ</p>
-          <p class="features-row-description">Все достопримечательности находятся очень близко</p>
+        <div class="features-row-block">
+          <p class="features-row-title black">НЕБОЛЬШАЯ ПЛОЩАДЬ</p>
+          <p class="features-row-description black">Все достопримечательности находятся очень близко</p>
         </div>
-        <div class="features-row-block block-2">
-          <p class="features-row-title">КРАСИВАЯ ДОРОГА</p>
-          <p class="features-row-description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+        <div class="features-row-block backdrop-grey">
+          <p class="features-row-title black">КРАСИВАЯ ДОРОГА</p>
+          <p class="features-row-description black">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
         </div>
-        <div class="features-row-block block-3">
-          <p class="features-row-title">МАЛО ТУРИСТОВ</p>
-          <p class="features-row-description">Большинство едут в Гранд-Каьон и толпится там</p>
+        <div class="features-row-block">
+          <p class="features-row-title black">МАЛО ТУРИСТОВ</p>
+          <p class="features-row-description black">Большинство едут в Гранд-Каьон и толпится там</p>
         </div>
       </div>
-      <div class="features-row-wrapper">
+      <div class="features-row-wrapper-bottom">
         <div class="features-row-text">
           <p class="features-row-title"> ТАМ ЕСТЬ МОСТ ДЬЯВОЛА</p>
           <p class="features-row-description"> Да, по нему можно пройти, если Вы осмелитесь разумеется</p>
@@ -97,7 +97,7 @@
       <h2>ПРИЕЗЖАЙТЕ В СЕДОНУ ОТДОХНУТЬ В КОМФОРТЕ И УЮТЕ</h2>
       <h3>Опытный персонал и качественное обслуживание!</h3>
       <ul class="benefits-list">
-        <li class="benefits-list-item">
+        <li class="benefits-list-item backdrop-grey">
           <img class="benefits-ico" src="images/benefits/accomodation.svg" width="75" height="72" alt="Жилье">
           <p class="benefits-title">ЖИЛЬЕ</p>
           <p class="benefits-paragraph">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
@@ -107,7 +107,7 @@
           <p class="benefits-title">ЕДА</p>
           <p class="benefits-paragraph">Всегда заказывайте топовый фирменный бургер, вы не разачаруетесь</p>
         </li>
-        <li class="benefits-list-item">
+        <li class="benefits-list-item backdrop-grey">
           <img class="benefits-ico" src="images/benefits/gifts.svg" width="64" height="76" alt="Сувениры">
           <p class="benefits-title">СУВЕНИРЫ</p>
           <p class="benefits-paragraph">Не только китайского, но и настощего местного производства!</p>
@@ -118,18 +118,18 @@
     <section class="search-catalog">
       <h2>ЗАИНТЕРЕСОВАЛИСЬ?</h2>
       <p class="search-catalog-paragraph">Укажите предполагаемые даты поездки и мы вам покажем лучшие предложения гостиниц в Седоне.</p>
-      <a href="catalog.html">
+      <a class="search-hotels" href="catalog.html">
         ПОИСК ГОСТИНИЦ В СЕДОНЕ
       </a>
     </section>
 
     <section class="subscription">
-      <h2>ПОДПИШИТЕСЬ НА РАССЫЛКУ</h2>
+      <h2 class="white">ПОДПИШИТЕСЬ НА РАССЫЛКУ</h2>
       <p class="subscription-paragraph">Только полезная информация и никакого спама, честное бойскаутское!</p>
       <form action="https://echo.htmlacademy.ru/" method="post">
-        <label for="e-mail"></label>
+        <label for="e-mail">E-mail</label>
         <input type="text" name="e-mail" placeholder="Ваш e-мейл" required>
-        <button type="submit">ПОДПИСАТЬСЯ</button>
+        <button class="sub-button" type="submit">ПОДПИСАТЬСЯ</button>
       </form>
     </section>
   </main>

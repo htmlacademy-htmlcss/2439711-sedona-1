@@ -13,14 +13,14 @@
     </a>
     <nav class="navigation">
       <ul class="navigation-list">
-        <li class="navigation-item">
-          <a class="navigation-link navigation-link-active" href="#">Главная</a>
+        <li class="navigation-item active">
+          <a class="navigation-link" href="#">Главная</a>
         </li>
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">О Седоне</a>
+        <li class="navigation-item active">
+          <a class="navigation-link" href="#sedona">О Седоне</a>
         </li>
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">Гостиницы</a>
+        <li class="navigation-item active">
+          <a class="navigation-link" href="catalog.html">Гостиницы</a>
         </li>
       </ul>
       <ul class="navigation nav-functionality">
@@ -37,32 +37,33 @@
         </li>
       </ul>
     </nav>
-    <a class="navigation-link" href="#">Хочу сюда</a>
+    <a class="navigation-link-want" href="#">Хочу сюда</a>
   </header>
 
   <main class="main">
     <section class="hero">
       <h1 class="visually-hidden">Отдохните в Седоне!</h1>
-      <img class="hero-backdrop" src="images/hero/hero-backdrop.jpg" alt="Горы предСедонья">
-      <img class="hero-backdrop-bottom" src="images/hero/hero-backdrop-bottom.png" alt="Горы предСедонья">
-      <div class="hero-titles">
-        <img src="images/hero/hero-text-1.svg" alt="Добро пожаловать!">
-        <img src="images/hero/hero-text-2.svg" alt="Седона">
-        <img src="images/hero/hero-text-3.svg" alt="Седона лучше Гранд каньона">
+      <div class="hero-wrapper">
+        <img class="hero-backdrop" src="images/hero/hero-backdrop.jpg" alt="Горы предСедонья">
+        <img class="hero-title" src="images/hero/welcome.svg" alt="Добро пожаловать в Седону!">
+        <img class="hero-backdrop-bottom" src="images/hero/hero-backdrop-bottom.png" alt="Декоративый узор">
       </div>
-      <p class="hero-header">
-        <h2>СЕДОНА - НЕБОЛЬШОЙ ГОРОДОК В АРИЗОНЕ, ЗАСЛУЖИВАЮЩИЙ БОЛЬШЕГО!</h2>
-      </p>
-      <p class="hero-description">
-        <h3>Рассмотрим причины по которым Седона круче, чем Гранд-Каньон!</h3>
-      </p>
+      <div class="hero-titles">
+        <p class="hero-header">
+          <h2 class="font-decor" id="sedona">Cедона - небольшой городок в аризоне, заслуживающий большего!</h2>
+        </p>
+        <p class="hero-description">
+          <h3 class="reasons-to-visit">Рассмотрим причины по которым Седона круче, чем Гранд-Каньон!</h3>
+        </p>
+      </div>
     </section>
 
     <section class="features">
       <h2 class="visually-hidden">Преимущества курорта Седона</h2>
       <div class="features-row-wrapper">
         <div class="features-row-text">
-          <p class="features-row-title">НАСТОЯЩИЙ ГОРОДОК</p>
+          <p class="features-row-title">Настоящий городок</p>
+          <hr>
           <p class="features-row-description">Седона - не аттракцион для туристов, там течет своя жизнь</p>
         </div>
         <div class="features-row-img-wrapper">
@@ -70,66 +71,72 @@
         </div>
       </div>
       <div class="features-row-wrapper">
-        <div class="features-row-block block-1">
-          <p class="features-row-title">НЕБОЛЬШАЯ ПЛОЩАДЬ</p>
+        <div class="features-row-block">
+          <p class="features-row-title">Небольшая площадь</p>
+          <hr>
           <p class="features-row-description">Все достопримечательности находятся очень близко</p>
         </div>
-        <div class="features-row-block block-2">
-          <p class="features-row-title">КРАСИВАЯ ДОРОГА</p>
+        <div class="features-row-block">
+          <p class="features-row-title">Красивая дорога</p>
+          <hr>
           <p class="features-row-description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
         </div>
-        <div class="features-row-block block-3">
-          <p class="features-row-title">МАЛО ТУРИСТОВ</p>
+        <div class="features-row-block">
+          <p class="features-row-title">Мало туристов</p>
+          <hr>
           <p class="features-row-description">Большинство едут в Гранд-Каьон и толпится там</p>
-        </div>
+      </div>
       </div>
       <div class="features-row-wrapper">
-        <div class="features-row-text">
-          <p class="features-row-title"> ТАМ ЕСТЬ МОСТ ДЬЯВОЛА</p>
-          <p class="features-row-description"> Да, по нему можно пройти, если Вы осмелитесь разумеется</p>
-        </div>
         <div class="features-row-img-wrapper">
           <img class="features-row-img" src="images/hero/hero-2.jpg" alt="Мост дьявола">
+        </div>
+        <div class="features-row-text">
+          <p class="features-row-title"> Там есть мост дьявола</p>
+          <hr>
+          <p class="features-row-description"> Да, по нему можно пройти, если Вы осмелитесь разумеется</p>
         </div>
     </div>
 
     <section class="benefits">
-      <h2>ПРИЕЗЖАЙТЕ В СЕДОНУ ОТДОХНУТЬ В КОМФОРТЕ И УЮТЕ</h2>
-      <h3>Опытный персонал и качественное обслуживание!</h3>
+      <div class="text-center">
+        <h2 class="font-decor">Приезжайте в седону отдохнуть в комфорте и уюте!</h2>
+        <h3 class="exp-stuff">Опытный персонал и качественное обслуживание!</h3>
+      </div>
       <ul class="benefits-list">
         <li class="benefits-list-item">
           <img class="benefits-ico" src="images/benefits/accomodation.svg" width="75" height="72" alt="Жилье">
-          <p class="benefits-title">ЖИЛЬЕ</p>
+          <p class="benefits-title">Жилье</p>
           <p class="benefits-paragraph">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
         </li>
         <li class="benefits-list-item">
           <img class="benefits-ico" src="images/benefits/food.svg" width="74" height="70" alt="Еда">
-          <p class="benefits-title">ЕДА</p>
+          <p class="benefits-title">Еда</p>
           <p class="benefits-paragraph">Всегда заказывайте топовый фирменный бургер, вы не разачаруетесь</p>
         </li>
         <li class="benefits-list-item">
           <img class="benefits-ico" src="images/benefits/gifts.svg" width="64" height="76" alt="Сувениры">
-          <p class="benefits-title">СУВЕНИРЫ</p>
+          <p class="benefits-title">Сувениры</p>
           <p class="benefits-paragraph">Не только китайского, но и настощего местного производства!</p>
         </li>
       </ul>
     </section>
 
     <section class="search-catalog">
-      <h2>ЗАИНТЕРЕСОВАЛИСЬ?</h2>
-      <p class="search-catalog-paragraph">Укажите предполагаемые даты поездки и мы вам покажем лучшие предложения гостиниц в Седоне.</p>
-      <a href="catalog.html">
-        ПОИСК ГОСТИНИЦ В СЕДОНЕ
+      <h2 class="font-decor">Заинтересовались?</h2>
+      <p class="search-catalog-paragraph">Укажите предполагаемые даты поездки, и мы вам покажем лучшие предложения гостиниц в Седоне.</p>
+      <a class="search-hotels" href="catalog.html">
+        Поиск гостиниц в седоне
       </a>
     </section>
 
     <section class="subscription">
-      <h2>ПОДПИШИТЕСЬ НА РАССЫЛКУ</h2>
+      <h2 class="subscription-title-index">Подпишитесь на рассылку</h2>
       <p class="subscription-paragraph">Только полезная информация и никакого спама, честное бойскаутское!</p>
-      <form action="https://echo.htmlacademy.ru/" method="post">
-        <label for="e-mail"></label>
-        <input type="text" name="e-mail" placeholder="Ваш e-мейл" required>
-        <button type="submit">ПОДПИСАТЬСЯ</button>
+      <form class="sub-line-wrapper" action="https://echo.htmlacademy.ru/" method="post">
+        <label for="e-mail">E-mail</label>
+        <input class="email-input" type="text" name="e-mail" placeholder="Ваш e-мейл" required>
+        <button class="sub-button" type="submit">Подписаться</button>
       </form>
     </section>
   </main>
@@ -152,9 +159,7 @@
         </a>
       </li>
     </ul>
-    <span class="footer-span">
-      <a tel:+7(812)8121212>+7 (812) 812-12-12</a>
-    </span>
+    <a class="footer-tel" tel:+7(812)8121212>+7 (812) 812-12-12</a>
     <a class="footer-html" href="https://htmlacademy.ru">
       <img src="images/social/html-academy.svg" width="115" height="33" alt="HTML Academy">
     </a>

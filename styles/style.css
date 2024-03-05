@@ -2,7 +2,6 @@
 
 @font-face {
   font-family: "PT Sans";
-  font-style: 400;
   font-weight: 400;
   src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-display: swap;
@@ -32,6 +31,11 @@
 
 /* Main */
 
+html {
+  height: 100%;
+}
+
+
 *,
 *::before,
 *::after {
@@ -40,8 +44,12 @@
 
 body {
   font-family: "PT Sans", sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  background: #ff0000; /*2 fix*/
+  min-height: 100%;
+  margin: 0;
+  color: #000000;
+  background-color: #ff0000; /*2 fix*/
 }
 
 .page {
@@ -77,6 +85,7 @@ body {
   gap: 30px;
   margin: auto 0;
   margin-left: 250px;
+  /*отступ от ссылок основного меню*/
 }
 
 .header {
@@ -136,7 +145,6 @@ body {
 }
 
 .hero-description {
-  font-weight: 400;
   font-size: 22px;
   line-height: 26px;
 }
@@ -148,7 +156,10 @@ body {
 }
 
 .hero-backdrop {
-  transform: translateY(-2%);
+  position: relative;
+  top: 4px;
+  /* transform: translateY(-2%); */
+  /* без понятия как еще можно чтоб соответствовало макету*/
 }
 
 .sedona-town {
@@ -175,7 +186,8 @@ body {
 .hero-backdrop-bottom {
   position: absolute;
   bottom: 0;
-  transform: translateY(-25%);
+  /* transform: translateY(-25%); */
+  /* аналогично */
 }
 
 /* Features */
@@ -203,7 +215,35 @@ body {
   line-height: 28px;
   color: #ffffff;
   text-transform: uppercase;
+  position: relative;
 }
+
+.features-row-title:after {
+  position: absolute;
+  content: " ";
+  height: 2px;
+  width: 80px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+}
+
+
+/*должно выбирать с второго по четвертый элемент, но не работает*/
+.features-row-title:nth-child(n+2):nth-child(-n+4):after {
+  position: absolute;
+  content: " ";
+  height: 2px;
+  width: 80px;
+  margin: 0 auto;
+  background-color: #000000;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+}
+
 
 .features-row-description {
   font-size: 18px;
@@ -212,13 +252,15 @@ body {
   color: #ffffff;
   text-align: center;
   width: 55%;
+  position: relative;
 }
 
 .features-row-wrapper {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: -4px;
+  /* margin-top: -4px; */
+  /* не нашел способа как сделать иначе в соответствии с макетом*/
 }
 
 .features-row-block {
@@ -231,23 +273,11 @@ body {
 }
 
 .features-row-wrapper p {
-  color: #000000;
-}
-
-.features-row-wrapper-top,
-.features-row-wrapper-bottom {
-  display: flex;
   color: #ffffff;
 }
 
-hr {
-  width: 60px;
-  border: 1px solid #3b3a3a;
-}
-
-.features-row-wrapper-top hr,
-.features-row-wrapper-bottom hr {
-  border: 1px solid #ffffff;
+.features-row-block p {
+  color: #000000;
 }
 
 .features-row-block {
@@ -262,6 +292,7 @@ hr {
 
 .benefits-list {
   display: flex;
+  padding: 0;
 }
 
 .text-center {
@@ -302,6 +333,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 400px;
   height: 385px;
 }
 
@@ -459,31 +491,29 @@ hr {
   font-weight: 700;
   line-height: 78px;
   color: #ffffff;
+  padding-top: 30px;
 }
 
 .hotel-filter-backdrop {
-  margin-top: -40px;
   margin-bottom: 20px;
   background-image: url("../images/decor/sub-backdrop.jpg");
-  height: 412px;
+  /* height: 412px; */
+  /* в таком случае не понятно как задавать высоту, если без нее элемент становится значительно меньше*/
 }
 
 .hotel-filter-sorting h1 {
   text-transform: uppercase;
 }
 
-.breadcrumbs-home {
-  content: url("../images/decor/home.svg");
-  width: 12px;
-  height: 12px;
-}
 
-.breadcrumbs-arrow {
+/* совершенно не понятно какая реализация от меня ожидается в классе p.breadcrumbs*/
+.breadcrumbs-home::after {
   content: url("../images/decor/breadcrumbs-w.svg");
+  position: absolute;
   width: 22px;
   height: 22px;
-  vertical-align: sub;
 }
+
 
 .breadcrumbs-hotels {
   font-size: 16px;
@@ -495,7 +525,7 @@ hr {
 /* Hotel filter*/
 
 .filter-title {
-  margin-top: 30px;
+  margin-top: 0;
   margin-left: 75px;
   margin-bottom: 0;
 }
@@ -534,9 +564,10 @@ select {
   display: block;
   border-radius: 5px;
   height: 40px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   margin: auto 0;
-  border: 2px slid grey;
+  border: 2px solid #808080;
+  /* "стилизация тега" не ясно что не так*/
 }
 
 .hotel-filter-item:not(:last-child) {
@@ -587,13 +618,16 @@ select {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
+  /* "стилизация тега" не ясно что не так*/
 }
 
 input[type="number"] {
   appearance: textfield;
   border-radius: 4px;
+  /* "стилизация тега" не ясно что не так*/
+  /* так же не понятно как одновременно добавить цифры в полях по умолчанию с текстом "от" и "до"*/
 }
 
 .hotel-filter-price-range-input {
@@ -733,7 +767,7 @@ input[type="number"] {
 /* Buttons */
 
 .apply {
-  background-color: rgb(28, 111, 144);
+  background-color: #1c6f90;
 }
 
 .reset {

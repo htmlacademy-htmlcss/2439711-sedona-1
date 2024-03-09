@@ -35,7 +35,6 @@ html {
   height: 100%;
 }
 
-
 *,
 *::before,
 *::after {
@@ -49,10 +48,11 @@ body {
   min-height: 100%;
   margin: 0;
   color: #000000;
-  background-color: #ff0000; /*2 fix*/
+  background-color: #fffdfd;
+  /*2 fix*/
 }
 
-.page {
+.container {
   width: 1200px;
   margin: 0 auto;
   background-color: #ffffff;
@@ -68,7 +68,11 @@ body {
 
 .font-decor {
   text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 }
+
+
 
 .navigation li,
 .benefits-list li,
@@ -76,34 +80,37 @@ body {
 .hotel-filter-layout li,
 .hotel-filter-list li {
   list-style: none;
+  list-style-type: none;
 }
 
-/* Header */
-
-.nav-functionality {
-  display: flex;
-  gap: 30px;
-  margin: auto 0;
-  margin-left: 250px;
-  /*отступ от ссылок основного меню*/
-}
+/* Header + navigation */
 
 .header {
   display: flex;
-  padding: 0 80px;
+  padding: 0 70px;
 }
 
 .navigation {
   display: flex;
+  width: 745px;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  justify-content: space-between;
   color: #000000;
 }
 
 .navigation-list {
+  margin: 0;
+  padding: 0;
   display: flex;
-  gap: 20px;
+  width: 340px;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+
 }
 
 .navigation-link {
@@ -112,22 +119,34 @@ body {
   line-height: 20px;
   text-decoration: none;
   color: #000000;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.nav-functionality {
+  display: flex;
+  width: 88px;
+  gap: 22px;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: auto; */
+
 }
 
 .active:hover {
-  text-decoration: underline 2px solid grey;
+  text-decoration: underline 2px solid #756257;
   text-underline-offset: 23px;
   transition: 0.4s ease-in-out;
 }
 
 .navigation-link-want {
   background-color: #756157;
-  padding: 8px 34px;
+  width: 160px;
+  padding: 8px 32px;
   border-radius: 4px;
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
-  height: 40px;
   margin: auto 0;
   margin-left: 30px;
 }
@@ -158,8 +177,6 @@ body {
 .hero-backdrop {
   position: relative;
   top: 4px;
-  /* transform: translateY(-2%); */
-  /* без понятия как еще можно чтоб соответствовало макету*/
 }
 
 .sedona-town {
@@ -186,14 +203,12 @@ body {
 .hero-backdrop-bottom {
   position: absolute;
   bottom: 0;
-  /* transform: translateY(-25%); */
-  /* аналогично */
 }
 
 /* Features */
 
 .features {
-  padding-bottom: 30px;
+  margin-bottom: 64px;
 }
 
 .features-row-text {
@@ -204,11 +219,17 @@ body {
   color: #ffffff;
   background-color: #82b3d3;
   width: 400px;
+  min-height: 385px;
+}
+
+.features-row-img-wrapper {
+  background-color: #82b3d3;
   height: 385px;
+  /* тут min-height не получается поставить*/
 }
 
 .features-row-title {
-  width: 30%;
+  width: 35%;
   text-align: center;
   font-size: 24px;
   font-weight: 700;
@@ -218,7 +239,7 @@ body {
   position: relative;
 }
 
-.features-row-title:after {
+.features-row-title::after {
   position: absolute;
   content: " ";
   height: 2px;
@@ -230,9 +251,7 @@ body {
   right: 0;
 }
 
-
-/*должно выбирать с второго по четвертый элемент, но не работает*/
-.features-row-title:nth-child(n+2):nth-child(-n+4):after {
+.features-row-block .features-row-title::after {
   position: absolute;
   content: " ";
   height: 2px;
@@ -244,14 +263,13 @@ body {
   right: 0;
 }
 
-
 .features-row-description {
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;
   color: #ffffff;
   text-align: center;
-  width: 55%;
+  width: 58%;
   position: relative;
 }
 
@@ -269,7 +287,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 385px;
+  min-height: 385px;
 }
 
 .features-row-wrapper p {
@@ -290,9 +308,15 @@ body {
 
 /* Benefits */
 
+
+.benefits {
+  margin-bottom: ;
+}
+
 .benefits-list {
   display: flex;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .text-center {
@@ -319,8 +343,7 @@ body {
 }
 
 .benefits-paragraph {
-  width: 60%;
-  display: flex;
+  width: 230px;
   text-align: center;
   font-size: 18px;
   font-weight: 400;
@@ -334,32 +357,57 @@ body {
   align-items: center;
   justify-content: center;
   width: 400px;
-  height: 385px;
-}
-
-.search-catalog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: 385px;
 }
 
 .benefits-list-item:nth-child(odd) {
   background-color: rgb(131, 179, 211, 0.2);
 }
+
 .benefits-list-item:nth-child(even) {
   background-color: rgb(131, 179, 211, 0.12);
 }
 
+
+.benefits .font-decor {
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 505px;
+}
+
+.exp-stuff {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 64px;
+}
+
+
+.search-catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 96px 304px;
+}
+
+
+
 /* Subscription */
 
 .search-catalog-paragraph {
-  width: 45%;
+  width: 592px;
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
   text-align: center;
   color: #000000;
-  margin-bottom: 60px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 54px;
+}
+
+
+.search-catalog .font-decor {
+  margin-bottom: 20px;
 }
 
 .search-hotels {
@@ -371,24 +419,28 @@ body {
   background-color: #756157;
   padding: 8px 50px;
   text-transform: uppercase;
-  margin-bottom: 60px;
 }
 
 .subscription {
   background-image: url("../images/decor/sub-backdrop.jpg");
   background-color: #cccccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  background-position: 75% 0;
 }
 
 .subscription,
 .subscription-catalog {
   width: 1200px;
-  height: 414px;
+  min-height: 414px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
 }
+
 .subscription-catalog {
   background-color: #ffffff;
 }
@@ -396,33 +448,45 @@ body {
 .subscribe-title {
   color: #ffffff;
   text-transform: uppercase;
-  transform: translateY(-160%);
 }
 
-.subscription-paragraph {
+.subscription-paragraph-index,
+.subscription-paragraph-catalog {
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
-  color: #ffffff;
   width: 45%;
   text-align: center;
   margin-top: 0;
   margin-bottom: 50px;
 }
 
-.subscription-title-index {
+.subscription-paragraph-index {
+  color: #ffffff;
+}
+
+.subscription-paragraph-catalog {
+  color: #000000;
+}
+
+.subscription-title-index,
+.subscription-title-catalog {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #ffffff;
+
   position: absolute;
   top: 80px;
   margin: 0 auto;
 }
 
+.subscription-title-index {
+  color: #ffffff;
+}
+
 .subscription-title-catalog {
   color: #000000;
-  text-transform: uppercase;
+
 }
 
 .sub-line-wrapper {
@@ -431,15 +495,17 @@ body {
 
 .email-input {
   width: 400px;
-  height: 53px;
+  min-height: 53px;
+  font-family: "PT Sans";
 }
 
 .email-input input {
+
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
   color: #000000;
-  height: 50px;
+  min-height: 50px;
 }
 
 .sub-button {
@@ -462,6 +528,7 @@ body {
 
 .footer-nav {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-nav-item {
@@ -497,23 +564,29 @@ body {
 .hotel-filter-backdrop {
   margin-bottom: 20px;
   background-image: url("../images/decor/sub-backdrop.jpg");
-  /* height: 412px; */
-  /* в таком случае не понятно как задавать высоту, если без нее элемент становится значительно меньше*/
+  min-height: 412px;
+  background-color: #cccccc;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 95% 30%;
+
 }
 
 .hotel-filter-sorting h1 {
+  font-family: "PT Sans";
+  font-size: 30px;
+  line-height: 36px;
   text-transform: uppercase;
 }
 
-
-/* совершенно не понятно какая реализация от меня ожидается в классе p.breadcrumbs*/
-.breadcrumbs-home::after {
+/* так элемента всего два breadcrumbs-home и breadcrumbs-hotels,
+после домика какое-то подчеркивание еще, все равно не понял конструкцию */
+.breadcrumbs::after:not(:last-child) {
   content: url("../images/decor/breadcrumbs-w.svg");
   position: absolute;
   width: 22px;
-  height: 22px;
+  min-height: 22px;
 }
-
 
 .breadcrumbs-hotels {
   font-size: 16px;
@@ -549,25 +622,34 @@ body {
 
 .hotel-filter-layout-item {
   display: flex;
+  width: 48px;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
   padding: 0 8px;
   border-radius: 5px;
-  border: 2px solid #7a7676;
+  border: 2px solid #E5E5E5;
+  font-weight: 400;
+  line-height: 20px;
+
 }
 
 .active-layout {
   border: 2px solid #000000;
 }
 
-select {
-  display: block;
+.hotel-sorting {
   border-radius: 5px;
-  height: 40px;
+  min-height: 40px;
   background-color: #ffffff;
   margin: auto 0;
   border: 2px solid #808080;
-  /* "стилизация тега" не ясно что не так*/
+  width: 292px;
+  font-family: "PT Sans";
+  font-size: 18px;
+  line-height: 21px;
+  padding-top: 5px;
+
 }
 
 .hotel-filter-item:not(:last-child) {
@@ -576,9 +658,17 @@ select {
 
 .hotel-filter-item {
   color: #ffffff;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+
+
 }
 
 .hotel-filter-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
@@ -590,6 +680,8 @@ select {
 }
 
 .hotel-filter-title {
+  line-height: 24px;
+  font-size: 20px;
   color: #ffffff;
   font-weight: 700;
   margin-bottom: 20px;
@@ -613,20 +705,19 @@ select {
 }
 
 .price-range-input {
-  height: 35px;
+  min-height: 35px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.price-range-input::-webkit-outer-spin-button,
+.price-range-input::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
-  /* "стилизация тега" не ясно что не так*/
 }
 
-input[type="number"] {
+.price-range-input[type="number"] {
   appearance: textfield;
   border-radius: 4px;
-  /* "стилизация тега" не ясно что не так*/
+
   /* так же не понятно как одновременно добавить цифры в полях по умолчанию с текстом "от" и "до"*/
 }
 
@@ -637,9 +728,17 @@ input[type="number"] {
 
 .hotel-filter-buttons {
   display: flex;
+  gap: 32px;
   flex-direction: column;
   justify-content: center;
-  margin-right: 50px;
+  margin-left: 70px;
+  margin-top: 45px;
+
+}
+
+.checkbox-input,
+.radio-input {
+  cursor: pointer;
 }
 
 /* Hotel card */
@@ -656,7 +755,7 @@ input[type="number"] {
   text-decoration: none;
   border-radius: 4px;
   color: #ffffff;
-  font-family: PT Sans;
+  font-family: "PT Sans";
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -668,7 +767,7 @@ input[type="number"] {
   text-decoration: none;
   border-radius: 4px;
   color: #ffffff;
-  font-family: PT Sans;
+  font-family: "PT Sans";
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -730,6 +829,7 @@ input[type="number"] {
 
 .pagination-list {
   display: flex;
+  flex-wrap: wrap;
   padding-left: 0;
 }
 
@@ -776,10 +876,16 @@ input[type="number"] {
 
 .reset,
 .apply {
+  width: 191px;
   padding: 10px 25px;
   border: 0;
   color: #ffffff;
   text-transform: uppercase;
+  font-family: "PT Sans";
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .hotel-details-more,

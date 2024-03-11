@@ -1,0 +1,894 @@
+/* Fonts */
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 400;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 700;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* Accessibility */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Main */
+
+html {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  min-height: 100%;
+  margin: 0;
+  color: #000000;
+  background-color: #fffdfd;
+  /*2 fix*/
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.reasons-to-visit h3,
+.exp-stuff h3 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #000000;
+}
+
+.font-decor {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.navigation li,
+.benefits-list li,
+.footer-nav li,
+.hotel-filter-layout li,
+.hotel-filter-list li {
+  list-style: none;
+  list-style-type: none;
+}
+
+/* Header + navigation */
+
+.header {
+  display: flex;
+  padding: 0 70px;
+}
+
+.navigation {
+  display: flex;
+  width: 745px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  justify-content: space-between;
+  color: #000000;
+}
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 340px;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+
+}
+
+.navigation-link {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-decoration: none;
+  color: #000000;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.nav-functionality {
+  display: flex;
+  width: 88px;
+  gap: 22px;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: auto; */
+
+}
+
+.active:hover {
+  text-decoration: underline 2px solid #756257;
+  text-underline-offset: 23px;
+  transition: 0.4s ease-in-out;
+}
+
+.navigation-link-want {
+  background-color: #756157;
+  width: 160px;
+  padding: 8px 32px;
+  border-radius: 4px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: auto 0;
+  margin-left: 30px;
+}
+
+.logo {
+  z-index: 100;
+}
+
+/* Hero */
+
+.hero-header {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.hero-description {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.hero-titles {
+  margin-top: 90px;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.hero-backdrop {
+  position: relative;
+  top: 4px;
+}
+
+.sedona-town {
+  width: 50%;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.reasons-to-visit {
+  font-weight: 400;
+}
+
+.hero-wrapper {
+  position: relative;
+}
+
+.hero-title {
+  position: absolute;
+  top: 11%;
+  left: 30%;
+  margin: 0 auto;
+}
+
+.hero-backdrop-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+/* Features */
+
+.features {
+  margin-bottom: 64px;
+}
+
+.features-row-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: #82b3d3;
+  width: 400px;
+  min-height: 385px;
+}
+
+.features-row-img-wrapper {
+  background-color: #82b3d3;
+  height: 385px;
+  /* тут min-height не получается поставить*/
+}
+
+.features-row-title {
+  width: 35%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.features-row-title::after {
+  position: absolute;
+  content: " ";
+  height: 2px;
+  width: 80px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+}
+
+.features-row-block .features-row-title::after {
+  position: absolute;
+  content: " ";
+  height: 2px;
+  width: 80px;
+  margin: 0 auto;
+  background-color: #000000;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+}
+
+.features-row-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #ffffff;
+  text-align: center;
+  width: 58%;
+  position: relative;
+}
+
+.features-row-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  /* margin-top: -4px; */
+  /* не нашел способа как сделать иначе в соответствии с макетом*/
+}
+
+.features-row-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  min-height: 385px;
+}
+
+.features-row-wrapper p {
+  color: #ffffff;
+}
+
+.features-row-block p {
+  color: #000000;
+}
+
+.features-row-block {
+  background-color: rgba(131, 179, 211, 0.2);
+}
+
+.features-row-block:nth-child(odd) {
+  background-color: rgb(131, 179, 211, 0.12);
+}
+
+/* Benefits */
+
+
+.benefits {
+  margin-bottom: ;
+}
+
+.benefits-list {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-center h2 {
+  width: 35%;
+  text-align: center;
+}
+
+.text-center h3 {
+  font-weight: 400;
+}
+
+.benefits-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.benefits-paragraph {
+  width: 230px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #000000;
+}
+
+.benefits-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  min-height: 385px;
+}
+
+.benefits-list-item:nth-child(odd) {
+  background-color: rgb(131, 179, 211, 0.2);
+}
+
+.benefits-list-item:nth-child(even) {
+  background-color: rgb(131, 179, 211, 0.12);
+}
+
+
+.benefits .font-decor {
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 505px;
+}
+
+.exp-stuff {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 64px;
+}
+
+
+.search-catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 96px 304px;
+}
+
+
+
+/* Subscription */
+
+.search-catalog-paragraph {
+  width: 592px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 54px;
+}
+
+
+.search-catalog .font-decor {
+  margin-bottom: 20px;
+}
+
+.search-hotels {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #756157;
+  padding: 8px 50px;
+  text-transform: uppercase;
+}
+
+.subscription {
+  background-image: url("../images/decor/sub-backdrop.jpg");
+  background-color: #cccccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  background-position: 75% 0;
+}
+
+.subscription,
+.subscription-catalog {
+  width: 1200px;
+  min-height: 414px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.subscription-catalog {
+  background-color: #ffffff;
+}
+
+.subscribe-title {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.subscription-paragraph-index,
+.subscription-paragraph-catalog {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  width: 45%;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.subscription-paragraph-index {
+  color: #ffffff;
+}
+
+.subscription-paragraph-catalog {
+  color: #000000;
+}
+
+.subscription-title-index,
+.subscription-title-catalog {
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 80px;
+  margin: 0 auto;
+}
+
+.subscription-title-index {
+  color: #ffffff;
+}
+
+.subscription-title-catalog {
+  color: #000000;
+
+}
+
+.sub-line-wrapper {
+  display: flex;
+}
+
+.email-input {
+  width: 400px;
+  min-height: 53px;
+  font-family: "PT Sans";
+}
+
+.email-input input {
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000000;
+  min-height: 50px;
+}
+
+.sub-button {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  background-color: #82b3d3;
+  color: #ffffff;
+  padding: 8px 50px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-nav-item {
+  padding: 13px 12px;
+}
+
+.footer-tel {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #000000;
+}
+
+.footer-html {
+  display: flex;
+  align-items: center;
+}
+
+/**************************/
+
+/* Catalog Page */
+
+.hotel-filter-backdrop h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 78px;
+  color: #ffffff;
+  padding-top: 30px;
+}
+
+.hotel-filter-backdrop {
+  margin-bottom: 20px;
+  background-image: url("../images/decor/sub-backdrop.jpg");
+  min-height: 412px;
+  background-color: #cccccc;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 95% 30%;
+
+}
+
+.hotel-filter-sorting h1 {
+  font-family: "PT Sans";
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+/* так элемента всего два breadcrumbs-home и breadcrumbs-hotels,
+после домика какое-то подчеркивание еще, все равно не понял конструкцию */
+.breadcrumbs::after:not(:last-child) {
+  content: url("../images/decor/breadcrumbs-w.svg");
+  position: absolute;
+  width: 22px;
+  min-height: 22px;
+}
+
+.breadcrumbs-hotels {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+/* Hotel filter*/
+
+.filter-title {
+  margin-top: 0;
+  margin-left: 75px;
+  margin-bottom: 0;
+}
+
+.breadcrumbs {
+  margin-left: 75px;
+  margin-bottom: 50px;
+}
+
+.hotel-filter-sorting {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 75px;
+}
+
+.hotel-filter-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.hotel-filter-layout-item {
+  display: flex;
+  width: 48px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  border-radius: 5px;
+  border: 2px solid #E5E5E5;
+  font-weight: 400;
+  line-height: 20px;
+
+}
+
+.active-layout {
+  border: 2px solid #000000;
+}
+
+.hotel-sorting {
+  border-radius: 5px;
+  min-height: 40px;
+  background-color: #ffffff;
+  margin: auto 0;
+  border: 2px solid #808080;
+  width: 292px;
+  font-family: "PT Sans";
+  font-size: 18px;
+  line-height: 21px;
+  padding-top: 5px;
+
+}
+
+.hotel-filter-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.hotel-filter-item {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+
+
+}
+
+.hotel-filter-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-overall-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.hotel-filter-title {
+  line-height: 24px;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hotel-filter-result {
+  text-transform: uppercase;
+}
+
+.hotel-filter-results {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 60px;
+  margin-bottom: 30px;
+}
+
+.hotel-filter {
+  border-style: none;
+}
+
+.price-range-input {
+  min-height: 35px;
+}
+
+.price-range-input::-webkit-outer-spin-button,
+.price-range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.price-range-input[type="number"] {
+  appearance: textfield;
+  border-radius: 4px;
+
+  /* так же не понятно как одновременно добавить цифры в полях по умолчанию с текстом "от" и "до"*/
+}
+
+.hotel-filter-price-range-input {
+  display: flex;
+  gap: 10px;
+}
+
+.hotel-filter-buttons {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 70px;
+  margin-top: 45px;
+
+}
+
+.checkbox-input,
+.radio-input {
+  cursor: pointer;
+}
+
+/* Hotel card */
+
+.card {
+  border: 1px solid grey;
+  padding: 20px 20px;
+  border-radius: 5px;
+}
+
+.hotel-details-more {
+  background-color: #756157;
+  padding: 8px 26px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: "PT Sans";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.hotel-details-fav {
+  background-color: #82b3d3;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: "PT Sans";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.card-hotel-name,
+.card-hotel-price {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.rating {
+  background-color: #f2f2f2;
+  padding: 8px 22px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+.card-paragraph {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hotel-names {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.card-bottom-paragraph,
+.hotel-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog-bottom {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
+
+/* Pagination */
+
+.pagination {
+  padding: 0 75px;
+}
+
+.pagination-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.pagination-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.pagination-list-item {
+  width: 60px;
+  height: 60px;
+  background-color: #82b3d3;
+  margin-right: 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-item {
+  background-color: #f2f2f2;
+  text-decoration: none;
+  color: #000000;
+}
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+}
+
+/* Buttons */
+
+.apply {
+  background-color: #1c6f90;
+}
+
+.reset {
+  background-color: transparent;
+}
+
+.reset,
+.apply {
+  width: 191px;
+  padding: 10px 25px;
+  border: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hotel-details-more,
+.hotel-details-fav {
+  text-transform: uppercase;
+}

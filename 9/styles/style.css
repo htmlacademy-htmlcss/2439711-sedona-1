@@ -2,6 +2,7 @@
 
 /* все же лучше оставлять комментарии в одном месте, и наверно это лучше делать на Github, а не в телеграм */
 
+/* хотелось бы услышать нормальное обьяснение связанное с исправлением переполнений, а не "почитай там", статья в интерфейсе обучения составлена ненаглядно и небрежно, прочитав ее я так и не понял как решать подобные проблемы системно */
 
 /* Fonts */
 
@@ -64,8 +65,8 @@ body {
   margin: 0;
   color: #000;
   background-color: #fffdfd;
+  /* background-color: red; */
   overflow-x: hidden; /* лечит горизонтальную прокрутку в Chrome */
-
 }
 
 .container {
@@ -106,7 +107,10 @@ body {
 .header {
   display: flex;
   padding: 0 70px;
-  height: 64px; /* min-height почемуто не работает как ожидаю, равезнутый каомментарий на GitHub*/
+  min-height: 64px;
+  flex-wrap: wrap;
+  /* убрал высоту - шапка ломается */
+  /* min-height почемуто не работает как ожидаю, равезнутый каомментарий на GitHub*/
 }
 
 .navigation {
@@ -174,7 +178,6 @@ body {
 
 .logo {
   z-index: 10;
-
 }
 
 .navigation-link-user {
@@ -237,6 +240,7 @@ body {
   width: 1200px; /* Горизонтального скрола не наблюдаю, поставил ширину на всяк */
   position: absolute;
   bottom: 4px;
+  left: 0;
 }
 
 /* Features */
@@ -244,7 +248,6 @@ body {
 .features {
   margin-bottom: 64px;
 }
-
 
 /* При замене div на li в ul.feature-list верстка ломается, не понял как сделать правильно */
 
@@ -284,11 +287,7 @@ body {
   position: relative;
   display: flex;
   margin: 0;
-
-
 }
-
-
 
 .feature-list {
   display: flex;
@@ -297,10 +296,10 @@ body {
   padding: 0;
 }
 
-
 .feature-list-item-full-row {
   display: flex;
   width: 100%;
+  color: white;
 }
 
 .features-row-text,
@@ -309,34 +308,31 @@ body {
   height: 385px;
 }
 
-/* :where(.feature-list-item .features-row-title:first-child::after, .feature-list-item .features-row-title:last-child::after) {
+.feature-list-item-full-row .features-row-title::after {
   position: absolute;
   content: " ";
   height: 2px;
   width: 80px;
   margin: 0 auto;
-  background-color: #ffffff;
-  opacity: 0.3;
-  bottom: -30px;
-  left: 0;
-  right: 0;
-} */
-/* Не понимаю как покрасить первую и последнюю черту */
-
-
-.feature-list-item .features-row-title::after {
-  position: absolute;
-  content: " ";
-  height: 2px;
-  width: 80px;
-  margin: 0 auto;
-  background-color: #000000;
+  background-color: rgba(255, 255, 255);
   opacity: 0.3;
   bottom: -30px;
   left: 0;
   right: 0;
 }
 
+.features-row-title::after {
+  position: absolute;
+  content: " ";
+  height: 2px;
+  width: 80px;
+  margin: 0 auto;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+}
 
 .features-row-description {
   font-size: 18px;
@@ -447,7 +443,6 @@ body {
 
 /* Subscription */
 
-
 .subscription {
   padding: 60px;
 }
@@ -549,16 +544,28 @@ body {
   padding-left: 15px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  outline: 0;
 
   /* В Figma радиус скругления написано mixed, не понятно как узнать реальное число */
+}
 
+.email-input:hover {
+  background-color: #e6e6e6;
+}
+
+.email-input:focus {
+  border: 2px solid #82b3d3;
+  transition: border 0.1s ease-in-out;
+}
+
+.email-input-catalog {
+  background-color: #f2f2f2;
+  border: 0;
 }
 
 .index-border {
   border-width: 0;
 }
-
-
 
 .email-input input {
   font-size: 18px;
@@ -569,7 +576,7 @@ body {
 }
 
 .sub-button {
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -600,8 +607,7 @@ body {
 }
 
 .footer-tel {
-
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-style: 400;
   display: flex;
   align-items: center;
@@ -618,6 +624,32 @@ body {
 .footer-html {
   display: flex;
   align-items: center;
+}
+
+.footer-social-svg:hover {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(28%) saturate(585%)
+    hue-rotate(161deg) brightness(87%) contrast(94%);
+  scale: 112%;
+  transition: scale 0.4s ease-in-out;
+}
+
+.footer-social-svg:active {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(28%) saturate(585%)
+    hue-rotate(161deg) brightness(87%) contrast(94%);
+  opacity: 0.3;
+}
+
+.footer-html-svg:hover,
+.footer-tel:hover {
+  filter: brightness(0) saturate(100%) invert(41%) sepia(14%) saturate(530%)
+    hue-rotate(336deg) brightness(93%) contrast(98%);
+}
+
+.footer-html-svg:active,
+.footer-tel:active {
+  filter: brightness(0) saturate(100%) invert(41%) sepia(14%) saturate(530%)
+    hue-rotate(336deg) brightness(93%) contrast(98%);
+  opacity: 0.3;
 }
 
 /* ************************ */
@@ -638,7 +670,7 @@ body {
   background-image: url("../images/decor/filter-backdrop.jpg");
   min-height: 412px;
   background-color: #333;
-  background-size: 100% auto;
+  background-size: auto 100%;
   background-repeat: no-repeat;
   padding-bottom: 30px;
 }
@@ -669,7 +701,6 @@ body {
   font-weight: 400;
   line-height: 21px;
   color: #ffffff;
-
 }
 
 .breadcrumbs-item:not(:last-child)::after {
@@ -714,8 +745,6 @@ body {
   line-height: 36px;
   text-transform: uppercase;
   margin-left: -10px; /* пока не вьехал почему так */
-
-
 }
 
 .hotel-filter-sorting {
@@ -745,6 +774,7 @@ body {
 
 .hotel-filter-layout-item:hover {
   cursor: pointer;
+  border: 2px solid #000000;
 }
 
 .active-layout {
@@ -770,6 +800,14 @@ body {
   margin-left: auto;
   margin-right: 40px;
   cursor: pointer;
+}
+
+.hotel-sorting:hover {
+  border: 2px solid #68a2ca;
+}
+
+.hotel-sorting:focus {
+  border: 2px solid #3f5e72;
 }
 
 .hotel-filter-item:not(:last-child) {
@@ -808,14 +846,11 @@ body {
   margin-bottom: 20px;
 }
 
-.hotel-filter-result {
-  text-transform: uppercase;
-}
-
 .hotel-filter-results {
   display: grid;
   grid-template-columns: repeat(3, 340px);
   gap: 16px 20px;
+  text-transform: uppercase;
   /* что-то не так с отступом справа он не равен отступу слева, думаю */
   /* grid-column: 1/-1; */
   /* margin: 0 auto;
@@ -836,6 +871,7 @@ body {
 .price-range-input {
   width: 143px;
   min-height: 35px;
+  border: 0;
 }
 
 .price-range-input::-webkit-outer-spin-button,
@@ -848,9 +884,38 @@ body {
   appearance: textfield;
   font-size: 18px;
   font-weight: 700;
-  border-radius: 4px;
   padding-left: 5px;
   padding-right: 45px; /* overflow protection */
+}
+
+.range-toggle:hover {
+  background-color: #82b3d3;
+} /* Отсебятина так как в стилях никакого взаимодействия при наведении нет */
+
+.price-range-input-min {
+  outline: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.price-range-input-min:focus,
+.price-range-input-max:focus {
+  outline: 2px solid #000000;
+}
+
+.price-range-input-max {
+  outline: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.price-range-input-min:hover,
+.price-range-input-max:hover {
+  background-color: #e6e6e6;
 }
 
 .price-ranger-wrapper {
@@ -902,15 +967,11 @@ body {
   margin-top: 43px;
 }
 
-
-
 /* Checkboxes & Radio */
-
 
 .control-input {
   cursor: pointer;
 }
-
 
 .hotel-filter input {
   appearance: none;
@@ -923,13 +984,13 @@ body {
 }
 
 .check-box {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #ffffff;
-    border-radius: 4px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
 }
 
 .control-input[type="checkbox"]:checked + .check-box::before {
@@ -938,18 +999,20 @@ body {
   height: 10px;
   /* background-color: #242424; */
   /* border-radius: 50%; */
-  /* не понимаю как показать галочку при выборе*/
+  /* не понимаю как показать галочку при выборе; не верный класс в Html*/
   content: url(../images/decor/interactive/check-mark.svg);
+  top: -3px;
+  left: 4px;
 }
 
 .radio-box {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #ffffff;
-    border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
 }
 
 .control-input[type="radio"]:checked + .radio-box::before {
@@ -963,12 +1026,15 @@ body {
   content: "";
 }
 
-
+.control:hover,
+.control:active {
+  opacity: 0.3;
+}
 
 /* Hotel card */
 
 .card {
-  border: 1px solid #E6E6E6;
+  border: 1px solid #e6e6e6;
   padding: 20px;
   border-radius: 5px;
   max-height: 460px;
@@ -984,12 +1050,36 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
 
   /* не ясно что не так */
 }
 
+.hotel-details-more:hover,
+.search-hotels:hover {
+  background-color: #615048;
+}
+
+.hotel-details-more:active,
+.search-hotels:active {
+  color: #ffffff;
+  opacity: 0.3;
+  background-color: #756157;
+}
+
+.hotel-details-more:disabled,
+.search-hotels:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
+  border: 0;
+}
+
 .hotel-details-fav {
-  background-color: #82b3d3;
+  background-color: #83b3d3;
   padding: 8px 20px;
   text-decoration: none;
   border-radius: 4px;
@@ -998,6 +1088,34 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hotel-details-fav:hover,
+.sub-button:hover,
+.catalog-apply:hover {
+  background-color: #68a2ca;
+}
+
+.hotel-details-fav:active,
+.sub-button:active,
+.catalog-apply:active {
+  color: #ffffff;
+  opacity: 0.3;
+  background-color: #68a2ca;
+}
+
+.hotel-details-fav:disabled,
+.sub-button:disabled,
+.catalog-apply:disabled {
+  color: #ffffff;
+  background-color: #68a2ca;
+  border: 0;
+  opacity: 0.3;
 }
 
 .card-hotel-name,
@@ -1075,7 +1193,6 @@ body {
   flex-wrap: wrap;
   padding-left: 0;
   gap: 5px;
-
 }
 
 .pagination-link {
@@ -1096,16 +1213,20 @@ body {
   cursor: pointer;
 }
 
-.pagination-list-item:first-child {
-
-  background-color: #F2F2F2;
-}
-
-
 .active-item {
-  text-decoration: none;
   color: #000000;
 }
+
+.pagination-list-item:first-child,
+.pagination-list-item:hover {
+  background-color: #f2f2f2;
+}
+
+.pagination-list-item:hover a {
+  color: #000000;
+}
+
+/* Что касается пагинации: лист со стилями в Figma не соответствует тому что нарисовано на самом макете */
 
 .pagination-dots {
   display: flex;
@@ -1117,7 +1238,7 @@ body {
 /* Buttons */
 
 .catalog-apply {
-  background-color: #82B3D3;
+  background-color: #82b3d3;
 }
 
 .catalog-reset {
@@ -1125,11 +1246,8 @@ body {
 }
 
 .catalog-reset:hover {
-  border: 3px solid #83B3D3;
-
+  outline: 3px solid #83b3d3;
 }
-
-
 
 .catalog-reset,
 .catalog-apply {
@@ -1149,7 +1267,6 @@ body {
 .hotel-details-fav {
   text-transform: uppercase;
 }
-
 
 /* Popup window */
 
@@ -1176,7 +1293,6 @@ body {
   width: 717px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
-
 }
 
 .modal-close-button {

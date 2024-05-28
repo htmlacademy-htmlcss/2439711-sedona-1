@@ -119,6 +119,8 @@ body {
   gap: 32px;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .navigation-link {
@@ -135,11 +137,13 @@ body {
   display: flex;
   gap: 22px;
   align-items: center;
-  margin-left: 220px; /* При установке в auto отрабатывает не так как ожидается, хотелось бы узнать почему */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 220px;
 }
 
 .active-link {
-  text-decoration: underline 2px solid #756257; /* подчеркивание верного цвета толщиной в 2px */
+  text-decoration: underline 2px solid #756257;
   text-underline-offset: 23px;
 }
 
@@ -168,17 +172,12 @@ body {
 .logo {
   position: relative;
   z-index: 10;
+  width: 140px;
 }
 
 .logo-pix {
   position: absolute;
-  width: 140px;
-  height: 70px;
-  left: 50%;
-  top: 50%;
-} /* Так и не понял ситуацию с
-https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r1561261755
-*/
+}
 
 .navigation-link-user {
   position: relative;
@@ -271,7 +270,13 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
 
 .features-row-img-wrapper {
   background-color: #82b3d3;
-  height: 385px;
+  height: auto;
+}
+
+.features-row-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .features-row-title {
@@ -285,6 +290,7 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   position: relative;
   display: flex;
   margin: 0;
+  padding-top: 20px;
 }
 
 .feature-list {
@@ -338,6 +344,7 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   line-height: 21px;
   margin: 0;
   margin-top: 60px;
+  padding-bottom: 20px;
   color: #ffffff;
   text-align: center;
   width: 230px;
@@ -729,7 +736,7 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
 .range-price-txt {
   position: absolute;
   left: 100px;
-  top: 5px;
+  top: 12px;
   color: #000000;
   opacity: 0.3;
   line-height: 24px;
@@ -774,6 +781,14 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   border: 2px solid #000000;
 }
 
+.hotel-filter-layout-item:focus-within {
+  border: 2px solid #83b3d3;
+}
+
+.hotel-filter-layout-item:focus-within a {
+  outline: none;
+}
+
 .active-layout {
   border: 2px solid #000000;
 }
@@ -793,7 +808,7 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   background-image: url("../images/decor/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: right 20px center;
-  padding-right: 40px; /*overflow protection*/
+  padding-right: 40px;
   margin-left: auto;
   margin-right: 40px;
   cursor: pointer;
@@ -804,7 +819,8 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
 }
 
 .hotel-sorting:focus {
-  border: 2px solid #3f5e72;
+  border: 2px solid #68a2ca;
+  outline: none;
 }
 
 .hotel-filter-item:not(:last-child) {
@@ -862,8 +878,13 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
 
 .price-range-input {
   width: 143px;
-  min-height: 35px;
+  min-height: 48px;
   border: 0;
+}
+
+#min,
+#max {
+  padding-left: 20px;
 }
 
 .price-range-input::-webkit-outer-spin-button,
@@ -877,12 +898,12 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   font-size: 18px;
   font-weight: 700;
   padding-left: 5px;
-  padding-right: 45px; /* overflow protection */
+  padding-right: 45px;
 }
 
 .range-toggle:hover {
   background-color: #82b3d3;
-} /* Отсебятина так как в стилях никакого взаимодействия при наведении нет */
+}
 
 .price-range-input-min {
   outline: 0;
@@ -894,7 +915,7 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
 
 .price-range-input-min:focus,
 .price-range-input-max:focus {
-  outline: 2px solid #000000;
+  outline: 2px solid #83b3d3;
 }
 
 .price-range-input-max {
@@ -1009,7 +1030,7 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   left: 5px;
   width: 10px;
   height: 10px;
-  background-color: #242424;
+  background-color: #3f5e72;
   border-radius: 50%;
   content: "";
 }
@@ -1017,6 +1038,11 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
 .control:hover,
 .control:active {
   opacity: 0.3;
+}
+
+.control:focus-within .check-box,
+.control:focus-within .radio-box {
+  outline: 3px solid #83b3d3;
 }
 
 /* Hotel card */
@@ -1102,6 +1128,22 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   background-color: #68a2ca;
   border: 0;
   opacity: 0.3;
+}
+
+.hotel-details-fav:focus-within,
+.hotel-details-more:focus-within,
+.catalog-reset:focus-within,
+.catalog-apply:focus-within,
+.range-toggle:focus-within,
+.readcrumbs-link-home:focus-within,
+.footer-nav-item a:focus-within,
+.footer-html:focus-within,
+.sub-button:focus-within,
+.navigation-link-user:focus-within,
+.navigation-link:focus-within,
+.breadcrumbs-link-home:focus-within,
+.logo:focus-within {
+  outline: 2px solid #4c8ab4;
 }
 
 .card-hotel-name,
@@ -1199,6 +1241,14 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   cursor: pointer;
 }
 
+.pagination-list-item:focus-within {
+  outline: 2px solid #4c8ab4;
+}
+
+.pagination-list-item a:focus {
+  outline: none;
+}
+
 .active-item {
   color: #000000;
 }
@@ -1266,7 +1316,7 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
 }
 
 .close-out {
-  /* display: none; */
+  display: none;
 }
 
 .popup {
@@ -1509,6 +1559,11 @@ https://github.com/htmlacademy-htmlcss/2439711-sedona-1/pull/9#discussion_r15612
   background-image: url("../images/decor/popup/info.svg");
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.button-tooltip svg {
+  color: #ffffff;
+  fill: #ffffff;
 }
 
 .tooltip-text {

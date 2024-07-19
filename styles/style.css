@@ -88,7 +88,7 @@ body {
   font-size: 30px;
   line-height: 36px;
   transform: translateY(-24px);
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
   font-weight: 700;
 }
 
@@ -667,7 +667,7 @@ body {
 }
 
 .sub-button {
-  font-family: "PT Sans";
+  font-family: "PT Sans, sans-serif";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -704,7 +704,7 @@ body {
 }
 
 .footer-tel {
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   display: flex;
   align-items: center;

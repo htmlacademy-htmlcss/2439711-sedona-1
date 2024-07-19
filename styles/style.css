@@ -87,8 +87,8 @@ body {
 .hero-titles .font-decor {
   font-size: 30px;
   line-height: 36px;
-  transform: translateY(-25px);
-  font-family: "PT Sans", sans-serif;
+  transform: translateY(-24px);
+  font-family: "PT Sans";
   font-weight: 700;
 }
 
@@ -222,6 +222,10 @@ body {
   transform: translateX(6px);
 }
 
+.navigation-item {
+  transform: translate(2px, 2px);
+}
+
 /* Hero */
 
 .hero-description {
@@ -264,7 +268,7 @@ body {
 }
 
 .hero-backdrop-bottom {
-  content: url("/images/hero/hero-backdrop-bottom.svg");
+  background-image: url("/images/hero/hero-backdrop-bottom.svg");
   position: absolute;
   bottom: 4px;
   left: 0;
@@ -406,6 +410,11 @@ body {
   flex-wrap: wrap;
 }
 
+.benefits-ico-accomodation,
+.benefits-ico-food,
+.benefits-ico-gifts {
+  transform: translate(1px, 4px);
+}
 .benefits-ico-accomodation {
   content: url("/images/benefits/accomodation.svg");
   width: 75px;
@@ -448,7 +457,7 @@ body {
   line-height: 28px;
   color: #000000;
   text-transform: uppercase;
-  margin-top: 33px;
+  margin-top: 35px;
 }
 
 .benefits-paragraph {
@@ -501,7 +510,7 @@ body {
   margin: 0;
   padding: 96px 304px;
   transform: translateY(-15px);
-  margin-bottom: -15px;
+  margin-bottom: -13px;
 }
 
 /* Subscription */
@@ -538,6 +547,7 @@ body {
   padding: 8px 50px;
   text-transform: uppercase;
   border-radius: 5px;
+  transform: translateY(2px);
 }
 
 .subscription {
@@ -601,7 +611,7 @@ body {
   color: #000000;
 }
 .subscription-title-catalog {
-  margin-bottom: 50px;
+  transform: translateY(-3px);
 }
 
 .subscription-title {
@@ -610,12 +620,11 @@ body {
   text-transform: uppercase;
   margin: 0 auto;
   margin-bottom: 30px;
-  transform: translateY(-4px);
 }
 
 .sub-line-wrapper {
   display: flex;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .email-input {
@@ -642,6 +651,7 @@ body {
 .email-input-catalog {
   background-color: #f2f2f2;
   border: 0;
+  transform: translateY(4px);
 }
 
 .index-border {
@@ -657,7 +667,7 @@ body {
 }
 
 .sub-button {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -667,6 +677,10 @@ body {
   border: 0;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.sub-button-catalog {
+  transform: translateY(4px);
 }
 
 /* Footer */
@@ -681,7 +695,7 @@ body {
 .footer-nav {
   display: grid;
   grid-template-columns: auto auto auto;
-  transform: translateX(-62px);
+  transform: translate(-60px, 1px);
   margin: auto 0;
 }
 
@@ -690,7 +704,7 @@ body {
 }
 
 .footer-tel {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans";
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -698,7 +712,7 @@ body {
   line-height: 40px;
   color: #000000;
   text-decoration: none;
-  transform: translateX(-21px);
+  transform: translate(-21px, 2px);
   margin-bottom: 9px;
 }
 
@@ -815,7 +829,7 @@ body {
   font-size: 32px;
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
-  transform: translateX(-30px);
+  transform: translateX(-27px);
 }
 
 .price-wrapper {
@@ -848,6 +862,14 @@ body {
   padding-top: 12px;
 }
 
+.hotels-found {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  transform: translate(-1px, -1px);
+}
+
 .hotel-filter-sorting h1 {
   white-space: nowrap;
   font-size: 30px;
@@ -858,6 +880,7 @@ body {
 .hotel-filter-layout {
   display: flex;
   gap: 8px;
+  transform: translateY(4px);
 }
 
 .hotel-filter-layout-item {
@@ -969,6 +992,7 @@ body {
   border-style: none;
   margin: 0;
   padding: 0;
+  transform: translateY(2px);
 }
 
 .hotel-filter-price {
@@ -993,7 +1017,7 @@ body {
   appearance: textfield;
   font-size: 18px;
   font-weight: 700;
-  padding-left: 17px;
+  padding-left: 21px;
   padding-right: 45px;
 }
 
@@ -1066,6 +1090,7 @@ body {
 .hotel-filter-price-range-input {
   display: flex;
   gap: 2px;
+  transform: translateY(2px);
 }
 
 .hotel-filter-buttons {
@@ -1161,6 +1186,7 @@ body {
 
   gap: 16px;
   height: auto;
+  transform: translate(2px, 2px);
 }
 
 .hotel-picture {
@@ -1336,7 +1362,7 @@ body {
   gap: 8px;
   margin-top: 40px;
   margin-bottom: 60px;
-  transform: translateX(68px);
+  transform: translateX(70px);
 }
 
 .pagination-link {
@@ -1355,6 +1381,9 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
 }
 
 .pagination-list-item:focus-within {
@@ -1415,7 +1444,7 @@ body {
 
 .catalog-reset {
   background-color: transparent;
-  margin-top: 18px;
+  margin-top: 21px;
 }
 
 .hotel-details-more,
